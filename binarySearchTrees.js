@@ -12,6 +12,7 @@ var Node = function(val){
 */
 var BinarySearchTree = function(){
   this.root = null;
+  this.height = 0;
 }
 
 
@@ -51,14 +52,61 @@ BinarySearchTree.prototype.push = function (val) {
       }
     }
   }
+  this.height = updateHeight(root);
 
 };
+
+BinarySearchTree.prototype.print = function () {
+  var root = this.root;
+
+  if(!root){
+    console.log('The tree is empty');
+  }
+
+  var currentNode = root;
+  console.log(currentNode.val);
+
+  var left = currentNode.left;
+  var right = currentNode.right;
+
+  while(!!left){
+    console.log(left.val);
+    if(!!left.right){
+      console.log(left.right.val);
+
+    }
+    left = left.left;
+  }
+
+  while(!!right){
+    console.log(right.val);
+    if(!!right.left){
+      console.log(right.left.val);
+
+    }
+    right = right.right;
+  }
+
+};
+var updateHeight = function(node){
+  if(!node){
+    return 0;
+  }
+
+  return 1 + Math.max(updateHeight(node.left), updateHeight(node.right));
+}
 
 var bst = new BinarySearchTree();
 bst.push(3);
 bst.push(2);
 bst.push(4);
 bst.push(1);
+bst.push(-1);
+bst.push(-11);
+bst.push(-19);
 bst.push(5);
+bst.push(51);
+bst.push(30);
+bst.push(1.5);
 
-console.log(bst);
+bst.print();
