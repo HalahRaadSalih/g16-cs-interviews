@@ -23,7 +23,7 @@ BinarySearchTree.prototype.push = function (val) {
   // if there is not root, create one
   if(!root){
     this.root = new Node(val);
-    return
+    return;
   }
 
   // otherwise, create new node
@@ -57,13 +57,16 @@ BinarySearchTree.prototype.push = function (val) {
 };
 
 BinarySearchTree.prototype.print = function (node) {
-  if(!!node){
-    console.log(node.val);
-  }
+
 
   if(!!node.left){
     this.print(node.left);
   }
+
+  if(!!node){
+    console.log(node.val);
+  }
+
   if(!!node.right){
     this.print(node.right);
   }
