@@ -56,38 +56,20 @@ BinarySearchTree.prototype.push = function (val) {
 
 };
 
-BinarySearchTree.prototype.print = function () {
-  var root = this.root;
-
-  if(!root){
-    console.log('The tree is empty');
+BinarySearchTree.prototype.print = function (node) {
+  if(!!node){
+    console.log(node.val);
   }
 
-  var currentNode = root;
-  console.log(currentNode.val);
-
-  var left = currentNode.left;
-  var right = currentNode.right;
-
-  while(!!left){
-    console.log(left.val);
-    if(!!left.right){
-      console.log(left.right.val);
-
-    }
-    left = left.left;
+  if(!!node.left){
+    this.print(node.left);
   }
-
-  while(!!right){
-    console.log(right.val);
-    if(!!right.left){
-      console.log(right.left.val);
-
-    }
-    right = right.right;
+  if(!!node.right){
+    this.print(node.right);
   }
 
 };
+
 var updateHeight = function(node){
   if(!node){
     return 0;
@@ -109,4 +91,4 @@ bst.push(51);
 bst.push(30);
 bst.push(1.5);
 
-bst.print();
+bst.print(bst.root);
