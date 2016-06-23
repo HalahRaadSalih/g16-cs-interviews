@@ -38,11 +38,44 @@ SinglyLinkedList.prototype.insert = function(val){
 
 }
 
+SinglyLinkedList.prototype.delete = function(index){
+  // check if index is within range
+	var currentNode = this.head;
+	var prevNode;
+	var i =0;
+
+	if(index > -1 && index < this.length){
+		// check if the deletion for head
+		if(index === 0){
+			this.head = currentNode.next;
+		}
+		else{
+			// traverse the list till you reach the desired node
+			while (i < index){
+				prevNode = currentNode;
+				currentNode = currentNode.next;
+				i++;
+			}
+			// delete by skipping over
+			prevNode.next = currentNode.next;
+
+		}
+		// update the length
+		this.length--;
+	}
+	else{
+		return;
+	}
+}
+
 var sll = new SinglyLinkedList();
 
 sll.insert(5);
 sll.insert(9);
 sll.insert(6);
 
+console.log(sll);
+
+sll.delete(1);
 
 console.log(sll);
