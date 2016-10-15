@@ -36,6 +36,9 @@ DoubllyLinkedList.prototype.insert = function (val) {
   this.length++;
 };
 
+DoubllyLinkedList.prototype.delete = function(index){
+  
+}
 var dll = new DoubllyLinkedList();
 dll.insert(1);
 dll.insert(2);
