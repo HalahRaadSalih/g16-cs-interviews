@@ -1,10 +1,9 @@
 /*
 constructor class for node
 */
-var Node = function(val){
-  this.val = val;
-  this.next = null
-};
+
+var Node = require('./Node');
+
 
 var SinglyLinkedList = function(){
   this.length = 0;
@@ -68,14 +67,4 @@ SinglyLinkedList.prototype.delete = function(index){
 	}
 }
 
-var sll = new SinglyLinkedList();
-
-sll.insert(5);
-sll.insert(9);
-sll.insert(6);
-
-console.log(sll);
-
-sll.delete(1);
-
-console.log(sll);
+module.exports = SinglyLinkedList;
