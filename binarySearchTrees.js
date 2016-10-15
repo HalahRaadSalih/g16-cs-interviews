@@ -37,8 +37,7 @@ BinarySearchTree.prototype.push = function (val) {
         currentNode.left = newNode;
         break;
       }
-      else{
-        currentNode = currentNode.left;
+      else{ currentNode = currentNode.left;
       }
     }
 

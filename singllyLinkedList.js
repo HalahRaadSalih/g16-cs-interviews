@@ -4,7 +4,6 @@ constructor class for node
 
 var Node = require('./Node');
 
-
 var SinglyLinkedList = function(){
   this.length = 0;
   this.head = null;
