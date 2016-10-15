@@ -1,0 +1,19 @@
+{
+  "name": "g16-cs-interviews",
+  "version": "1.0.0",
+  "description": "This will be for CS information and notes to be reviewed for interviews.",
+  "main": "DoublyLinkedList.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HalahRaadSalih/g16-cs-interviews.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HalahRaadSalih/g16-cs-interviews/issues"
+  },
+  "homepage": "https://github.com/HalahRaadSalih/g16-cs-interviews#readme"
+}
